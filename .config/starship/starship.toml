@@ -1,0 +1,29 @@
+add_newline = false
+format = '$directory$git_branch$git_status$character'
+right_format = '$username$hostname'
+
+[character]
+vimcmd_symbol = '[](bold cyan)'
+
+[directory]
+style = 'bold purple'
+read_only = ''
+
+[git_branch]
+format = '[$branch]($style) '
+symbol = ''
+style = 'bold green'
+
+[git_status]
+format = '([$all_status$ahead_behind]($style))'
+style = 'yellow'
+deleted = 'x'
+
+[username]
+format = '[$user](yellow)'
+
+[hostname]
+format = '[@$hostname](green)'
+
+[package]
+disabled = true

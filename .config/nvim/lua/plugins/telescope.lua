@@ -1,69 +1,50 @@
-
--- Telescope plugin spec
 return {
-  {
-    "nvim-telescope/telescope.nvim",
-	tag = '0.1.8',
-    dependencies = {
-		"nvim-lua/plenary.nvim",
-		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
-	},
-    config = function()
-      local actions = require("telescope.actions")
-      local builtin = require("telescope.builtin")
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = '0.1.8',
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
+		},
+		config = function()
 
-      -- Telescope setup with key mappings
-      require("telescope").setup {
-        defaults = {
-          mappings = {
-            i = {
-              ["<A-j>"] = actions.move_selection_next,
-              ["<A-k>"] = actions.move_selection_previous,
-              ["<A-l>"] = actions.select_default,
-              ["<A-;>"] = actions.close,
-            },
-            n = {
-              ["l"] = actions.move_selection_next,
-              ["k"] = actions.move_selection_previous,
-              ["j"] = actions.select_default,
-              [";"] = actions.close,
-            },
-          },
-		  file_ignore_patterns = {
-			  "node_modules"
-		  },
-        },
-      }
+			local actions = require("telescope.actions")
+			-- Telescope setup with key mappings
+			require("telescope").setup {
+				defaults = {
+					mappings = {
+						i = {
+							["<A-j>"] = actions.move_selection_next,
+							["<A-k>"] = actions.move_selection_previous,
+							["<A-l>"] = actions.select_default,
+							["<A-h>"] = actions.close,
+						},
+						n = {
+							["j"] = actions.move_selection_next,
+							["k"] = actions.move_selection_previous,
+							["h"] = actions.select_default,
+							["l"] = actions.close,
+						},
+					},
+					file_ignore_patterns = {
+						"node_modules"
+					},
+				},
+			}
+			-- telescope
+			local builtin = require("telescope.builtin")
+			vim.keymap.set("n", "<leader>e", builtin.diagnostics, { desc = "Find diagnostics" })
+			vim.keymap.set("n", "<leader>i", builtin.lsp_references, { desc = "Find File" })
+			vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "Find File" })
+			vim.keymap.set("n", "<leader>F", builtin.live_grep, { desc = "Live Grep" })
+			vim.keymap.set("n", "<leader>g", builtin.lsp_document_symbols, { desc = "Lest Types" })
+			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "List Buffers" })
 
-      -- Telescope keymaps
-      vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "Find File" })
-      vim.keymap.set("n", "<leader>g", builtin.live_grep, { desc = "Live Grep" })
-      vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "List Buffers" })
-      vim.keymap.set("n", "<leader>e", function ()
-      	builtin.find_files {
-			cwd = vim.fn.stdpath('config')
-		}
-      end,{ desc = "Find nvim config File" })
 
-	        vim.keymap.set("n", "<leader>G", function()
-        builtin.live_grep({
-          glob_pattern = "*",
-          cwd = "/",
-          word_match = "-w",
-        })
-      end, { desc = "Live Grep Globally (root)" })
+			-- Make <Space> work normally in insert mode
+			vim.keymap.set("i", "<Space>", "<Space>")
 
-      vim.keymap.set("n", "<A-F>F", function()
-        builtin.find_files({
-          glob_pattern = "*",
-          cwd = "/",
-          word_match = "-w",
-        })
-      end, { desc = "Find Files Globally (root)" })
-
-      -- Make <Space> work normally in insert mode
-      vim.keymap.set("i", "<Space>", "<Space>")
-    end,
+end,
   }
 }
 

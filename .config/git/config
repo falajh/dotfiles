@@ -1,0 +1,13 @@
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = almogtbanmr123@gmail.com
+	name = zaater
+[init]
+	defaultBranch = main
+[alias]
+	ls = log --oneline --graph
+[push]
+	autoSetupRemote = true

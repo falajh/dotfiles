@@ -4,4 +4,5 @@ return {
 	{ "nvim-tree/nvim-web-devicons" },
 	-- color
 	{ "Mofiqul/dracula.nvim" },
+	{ "HiPhish/rainbow-delimiters.nvim" },
 }

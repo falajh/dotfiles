@@ -2,12 +2,12 @@
 
 configuration {
     show-icons:      true;
-    //display-drun:    "";
+    display-drun:    "Launcher ";
     disable-history: false;
 }
 
 * {
-    font: "Jetbrains Mono 12";
+    font: "Fredoka Condensed, Medium Condensed 14";
     foreground: #f8f8f2;
     //background-color: #282a36;
 	background-color: rgba(0, 0, 0, 0); 

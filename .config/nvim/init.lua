@@ -1,20 +1,49 @@
 vim.o.mouse = ""
-vim.opt.tabstop = 4 -- Number of visual spaces per TAB
-vim.opt.shiftwidth = 4 -- Number of spaces to use for autoindenting
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 vim.g.mapleader = " "
-vim.opt.signcolumn = "no"
+--vim.opt.signcolumn = "no"
+vim.o.list = true
+vim.opt.listchars = {
+	tab = '│ ',
+	lead = '·',
+	trail = '·',
+	--space = '·',
+	eol = '󱞣',
+}
+vim.o.scrolloff = 8
+vim.o.sidescroll = 1
+vim.o.sidescrolloff = 8
+vim.o.hlsearch = false
+vim.o.incsearch = true
+vim.o.termguicolors = true
+vim.o.cursorline = true
+vim.o.spell = true
+vim.o.spelllang = "en_us"
+vim.o.wrap = true
+vim.o.confirm = true
+--vim.opt.winborder = 'rounded'
+--vim.o.termbidi = true
+--vim.o.arabic = true
 
-require("keymaps")
+
+require("config.keymaps")
 require("config.lazy")
-
+require("config.lsp")
 
 
 vim.diagnostic.config({
-	virtual_text = true,   -- show inline text (under the line)
-	signs = true,          -- show in sign column
-	underline = true,      -- underline the error in code
+	--	virtual_lines =true,
+	virtual_text = true, -- show inline text (under the line)
+	signs = false,     -- show in sign column
+	underline = true, -- underline the error in code
 	update_in_insert = false,
+	float = {
+		border = 'rounded',
+		source = true,
+	}
 })
+
 
 -- line number
 vim.opt.number = true
@@ -22,43 +51,26 @@ vim.opt.relativenumber = true
 
 -- Smart relative line numbers
 vim.api.nvim_create_autocmd({ "InsertEnter" }, {
-  callback = function()
-    vim.opt.relativenumber = false
-  end,
+	callback = function()
+		vim.opt.relativenumber = false
+	end,
 })
 
 vim.api.nvim_create_autocmd({ "InsertLeave" }, {
-  callback = function()
-    vim.opt.relativenumber = true
-  end,
+	callback = function()
+		vim.opt.relativenumber = true
+	end,
 })
 
 -- Set colorscheme
-vim.cmd.colorscheme  "dracula"
-vim.api.nvim_set_hl(0, "Normal", { bg = "none"})
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none"})
+vim.cmd.colorscheme "dracula"
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFD700", bold = true })
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#ff79c6" }) -- green
+vim.api.nvim_set_hl(0, "SpellBad", { undercurl = false, underline = false })
+vim.api.nvim_set_hl(0, "SpellCap", { undercurl = false, underline = false })
+vim.api.nvim_set_hl(0, "SpellLocal", { undercurl = false, underline = false })
+vim.api.nvim_set_hl(0, "SpellRare", { undercurl = false, underline = false })
 
-
-vim.diagnostic.config({
-  virtual_text = {
-    format = function(diagnostic)
-      if diagnostic.code == 6133 or diagnostic.code == 80001 then
-        return nil  -- Hide unused var + ES module suggestions
-      end
-      return diagnostic.message
-    end
-  }
-})
-
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(args)
-	vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float, { noremap = true, silent = true })
-	vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true })
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client then
-      client.server_capabilities.semanticTokensProvider = nil
-    end
-  end,
-})
-
+--vim.api.nvim_set_hl(0, "Normal", { bg = "none"})
+--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none"})
+--vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })

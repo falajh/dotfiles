@@ -4,17 +4,17 @@ return {
 	config = function ()
 		require("lualine").setup({
 			options = {
-				theme = "dracula",
-			sections = {
-				lualine_c = {
-					{
-						'filename',
-						path = 1,
-					}
+					theme = "dracula-nvim",
+					--theme = 'auto',
+					},
+				sections = {
+					lualine_c = {
+						{
+							'filename',
+							path = 1,
+						}
 				},
-			},
-		}
-	}
-)
-end
+			}
+		})
+	end
 }
