@@ -22,12 +22,10 @@ vim.o.spell = true
 vim.o.spelllang = "en_us"
 vim.o.wrap = true
 vim.o.confirm = true
---vim.opt.winborder = 'rounded'
---vim.o.termbidi = true
---vim.o.arabic = true
 
 
 require("config.keymaps")
+require("config.usercommands")
 require("config.lazy")
 require("config.lsp")
 

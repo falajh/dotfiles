@@ -31,6 +31,8 @@ setopt EXTENDED_HISTORY     # Save timestamp
 export KEYTIMEOUT=1
 
 #match menu
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cach-path ~/.local/cash/zsh
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no

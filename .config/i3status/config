@@ -25,7 +25,7 @@ cpu_usage {
 }
 
 battery 0 {
-	format = "[%status%percentage]"
+	format = "%status%percentage"
 	status_chr = 󰁹󱐋
 	status_bat = '󰁹 '
 	status_full = '󱟢 '
@@ -42,7 +42,7 @@ wireless _first_ {
 
 
 time {
-    format = "[> %I:%M %p %m/%d %A <]"
+    format = "%I:%M:%S %p\t\t%m/%d %A\t\t\t"
 }
 
 path_exists VPN {

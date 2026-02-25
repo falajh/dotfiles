@@ -1,6 +1,6 @@
 add_newline = false
 format = '$directory$git_branch$git_status$character'
-right_format = '$username$hostname'
+right_format = '$python$username$hostname'
 
 [character]
 vimcmd_symbol = '[](bold cyan)'
@@ -24,6 +24,10 @@ format = '[$user](yellow)'
 
 [hostname]
 format = '[@$hostname](green)'
+
+[python]
+format = '[$symbol$version](bold yellow) '
+detect_extensions = []
 
 [package]
 disabled = true
