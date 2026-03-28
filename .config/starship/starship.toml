@@ -7,7 +7,7 @@ vimcmd_symbol = '[](bold cyan)'
 
 [status]
 disabled = false
-format = '[$status]($style)'
+format = '[$status]($style) '
 
 [directory]
 style = 'bold purple'

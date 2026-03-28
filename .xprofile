@@ -1,4 +1,3 @@
-#setxkbmap -layout us,ara -option caps:super
 TOUCHPAD=$(xinput list --name-only | grep -i touchpad)
 xinput set-prop "$TOUCHPAD" "libinput Tapping Enabled" 0
 export XCURSOR_THEME=LyraQ-cursors

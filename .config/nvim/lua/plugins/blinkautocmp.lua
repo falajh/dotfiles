@@ -46,10 +46,22 @@ return {
 			["<Tab>"] = { 'select_next', 'fallback' },
 			["<S-Tab>"] = { 'select_prev', 'fallback' },
 			["<CR>"] = { 'accept', 'fallback' },
-			['<C-b>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end }
+			['<C-b>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end },
 
 		},
-
+		cmdline = {
+			keymap = {
+				['<S-CR>'] = { 'accept_and_enter', 'fallback' },
+			},
+			completion = {
+				ghost_text = {
+					enabled = true
+				},
+				menu = {
+					auto_show = true
+				}
+			},
+		},
 		appearance = {
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 			-- Adjusts spacing to ensure icons are aligned
@@ -66,8 +78,8 @@ return {
 				-- nvim-cmp style menu
 				draw = {
 					columns = {
-						{ "kind_icon", "label", gap = 1 },
-						{ "kind", "source_name", gap = 1 }
+						{ "kind_icon", "label",       gap = 1 },
+						{ "kind",      "source_name", gap = 1 }
 					},
 				}
 			},
