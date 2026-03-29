@@ -1,4 +1,5 @@
 -- Remap movement keys
+vim.keymap.set('n', 'q:', '<Nop>')
 vim.keymap.set({ 'n', 'v', 'o' }, '^', '0', { noremap = true, desc = "Move to beginning of line" })
 vim.keymap.set({ 'n', 'v', 'o' }, '0', '^', { noremap = true, desc = "Move to first non-blank character" })
 vim.keymap.set({ 'i', 'c' }, '<A-h>', '<left>', { noremap = true, desc = "Move cursor left" })

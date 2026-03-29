@@ -8,7 +8,7 @@
 [init]
 	defaultBranch = main
 [alias]
-	ls = log --oneline --graph
+	ls = "!git log --graph --pretty=format:\"%C(auto)%h %Cgreen%cr%C(auto)%d %s\" --color=always | sed -E \"s/([0-9]+) seconds? ago/\\1s/; s/([0-9]+) minutes? ago/\\1min/; s/([0-9]+) hours? ago/\\1h/; s/([0-9]+) days? ago/\\1d/; s/([0-9]+) weeks? ago/\\1w/; s/([0-9]+) months? ago/\\1mo/; s/([0-9]+) years? ago/\\1y/\" | bat --style=snip,grid"
 [push]
 	autoSetupRemote = true
 [merge]
@@ -19,8 +19,10 @@
 [interactive]
 	diffFilter = delta --color-only
 [delta]
+	pager = bat --style=grid,snip
 	navigate = true
 	line-numbers = true
 	theme = Dracula
+	tabs = 4
 [pull]
 	rebase = true

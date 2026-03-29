@@ -1,8 +1,8 @@
 return {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    dependencies = { "nvim-lua/plenary.nvim" },
-	config = function ()
+	"ThePrimeagen/harpoon",
+	branch = "harpoon2",
+	dependencies = { "nvim-lua/plenary.nvim" },
+	config = function()
 		local harpoon = require("harpoon")
 
 		-- REQUIRED
@@ -17,5 +17,11 @@ return {
 		vim.keymap.set("n", "<leader>l", function() harpoon:list():select(3) end)
 		vim.keymap.set("n", "<leader>;", function() harpoon:list():select(4) end)
 
+		vim.api.nvim_create_autocmd("DirChanged", {
+			callback = function()
+				harpoon:sync()
+				harpoon:setup()
+			end,
+		})
 	end
 }
