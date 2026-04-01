@@ -47,3 +47,5 @@
 .config/qutebrowser/***
 .config/flameshot/
 .config/flameshot/***
+.config/lazygit/
+.config/lazygit/***

@@ -1,4 +1,4 @@
-set $zscripts /home/zaater/.config/scripts
+set $zscripts /home/zaater/app/scripts
 include ~/.config/i3/keymaps
 include ~/.config/i3/workspaces
 
@@ -10,7 +10,7 @@ exec --no-startup-id fcitx5 -dr
 exec --no-startup-id exec picom -b 
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/Nighthawks_by_Edward_Hopper_1942.jpg
 exec --no-startup-id $zscripts/battery-warner.sh
-exec --no-startup-id xset s 600 500
+# exec --no-startup-id xset s 600 500
 exec --no-startup-id xss-lock -n /usr/share/doc/xss-lock/dim-screen.sh -- i3lock -n
 exec --no-startup-id alacritty --class=scratchpad-term
 

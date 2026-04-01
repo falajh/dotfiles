@@ -1,0 +1,4 @@
+# ~/.config/lazygit/config.yml
+git:
+  pagers:
+    - pager: delta --paging=never
