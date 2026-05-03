@@ -1,9 +1,14 @@
 add_newline = false
 format = '$directory$git_branch$git_status$character'
-right_format = '$status$python$username$hostname'
+right_format = '$git_metrics$status$python$username$hostname'
 
 [character]
-vimcmd_symbol = '[](bold cyan)'
+success_symbol = "[❯](bold white)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[N](bold yellow)"
+vimcmd_visual_symbol = "[V](bold yellow)"
+vimcmd_replace_symbol = "[R](bold yellow)"
+vimcmd_replace_one_symbol = "[R](bold yellow)"
 
 [status]
 disabled = false
@@ -16,11 +21,11 @@ read_only = ''
 [git_branch]
 format = '[$branch]($style) '
 symbol = ''
-style = 'bold green'
+style = 'bold grey'
 
 [git_status]
 format = '([$all_status$ahead_behind]($style))'
-style = 'yellow'
+style = ''
 deleted = 'x'
 
 [username]
@@ -32,6 +37,7 @@ format = '[@$hostname](green)'
 [python]
 format = '[$symbol$version](bold yellow) '
 detect_extensions = []
+
 
 [package]
 disabled = true

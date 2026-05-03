@@ -50,6 +50,7 @@ return {
 
 		},
 		cmdline = {
+			enabled = true,
 			keymap = {
 				['<S-CR>'] = { 'accept_and_enter', 'fallback' },
 			},

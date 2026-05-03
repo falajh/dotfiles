@@ -1,1 +1,1 @@
-.config/zsh/.zshrc
+/home/zaater/.config/zsh/zshrc

@@ -1,0 +1,53 @@
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+autoload -Uz compinit && compinit
+source ~/.config/zsh/fzf-tab/fzf-tab.plugin.zsh
+typeset -gA FAST_HIGHLIGHT_STYLES
+FAST_HIGHLIGHT_STYLES[command]='fg=cyan,bold'
+FAST_HIGHLIGHT_STYLES[alias]='fg=cyan,bold'
+FAST_HIGHLIGHT_STYLES[builtin]='fg=green,bold'
+FAST_HIGHLIGHT_STYLES[function]='fg=yellow,bold'
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+HISTDUP=erase
+setopt INC_APPEND_HISTORY       # Immediately append new commands to history file
+setopt SHARE_HISTORY            # Share history across all sessions
+setopt HIST_IGNORE_ALL_DUPS     # Remove older duplicate entries
+setopt HIST_REDUCE_BLANKS       # Remove superfluous blanks
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+setopt HIST_VERIFY              # Show command with history expansion before running
+setopt auto_cd
+setopt HIST_IGNORE_SPACE    # Don't save commands starting with space
+setopt EXTENDED_HISTORY     # Save timestamp
+# export KEYTIMEOUT=0
+
+#match menu
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cach-path ~/.local/cash/zsh
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+bindkey -v
+
+if test -n "$KITTY_INSTALLATION_DIR"; then
+	export KITTY_SHELL_INTEGRATION="enabled"
+	autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+	kitty-integration
+	unfunction kitty-integration
+fi
+
+source ~/.config/zsh/funcs.zsh
+
+export STARSHIP_CONFIG=/home/zaater/.config/starship/starship.toml
+# autoload -Uz bracketed-paste-magic
+# zle -N bracketed-paste bracketed-paste-magic
+source ~/.alias.sh
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+# eval "$(fzf --zsh)"

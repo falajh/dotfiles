@@ -1,0 +1,24 @@
+#vim.o.mouse = ""
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.g.mapleader = " "
+vim.opt.signcolumn = "yes"
+vim.o.list = true
+vim.opt.listchars = {
+	tab = '│ ',
+	lead = '·',
+	trail = '·',
+	--space = '·',
+	eol = '󱞣',
+}
+vim.o.scrolloff = 8
+vim.o.sidescroll = 1
+vim.o.sidescrolloff = 15
+vim.o.hlsearch = false
+vim.o.incsearch = true
+vim.o.termguicolors = true
+vim.o.cursorline = true
+vim.o.wrap = true
+vim.o.confirm = true
+vim.opt.number = true
+vim.opt.relativenumber = true

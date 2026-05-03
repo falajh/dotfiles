@@ -1,6 +1,6 @@
 
 [window]
-opacity = 0.95
+opacity = 1.0
 # blur = true
 [env]
 TERM = "xterm-256color"
@@ -60,21 +60,15 @@ text       = "#000000"
 background = "#ffffff"
 
 [[keyboard.bindings]]
-key = "V"
+key = "p"
+# mods = "Control"
+action = "Paste"
+mode = "Vi"
+
+[[keyboard.bindings]]
+key = "v"
 mods = "Control"
 action = "Paste"
-
-[[keyboard.bindings]]
-action = "ScrollPageUp"
-key = "u"
-mods = "Alt"
-mode = "Vi"
-
-[[keyboard.bindings]]
-action = "ScrollPageDown"
-key = "m"
-mods = "Alt"
-mode = "Vi"
 
 [[keyboard.bindings]]
 action = "ScrollLineUp"
@@ -89,9 +83,11 @@ mods = "Control|Shift"
 [[keyboard.bindings]]
 action = "ScrollPageUp"
 key = "u"
-mods = "Control|Shift"
+# mods = "Control|Shift"
+mode = "Vi"
 
 [[keyboard.bindings]]
 action = "ScrollPageDown"
 key = "m"
-mods = "Control|Shift"
+# mods = "Control|Shift"
+mode = "Vi"

@@ -1,5 +1,5 @@
 -- Remap movement keys
-vim.keymap.set('n', 'q:', '<Nop>')
+vim.keymap.set('n', 'q', '<Nop>')
 vim.keymap.set({ 'n', 'v', 'o' }, '^', '0', { noremap = true, desc = "Move to beginning of line" })
 vim.keymap.set({ 'n', 'v', 'o' }, '0', '^', { noremap = true, desc = "Move to first non-blank character" })
 vim.keymap.set({ 'i', 'c' }, '<A-h>', '<left>', { noremap = true, desc = "Move cursor left" })
@@ -65,13 +65,6 @@ vim.keymap.set('n', '<leader>y', function()
 end, { desc = 'Yank to clipboard history' })
 
 -- autocommands
-vim.api.nvim_create_autocmd("TextYankPost", {
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({ timeout = 200 }) -- 200ms highlight
-	end,
-})
-
 -- lsp
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
@@ -86,7 +79,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, lopts)
 		vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, lopts)
 
-		if client and client.supports_method("textDocument/formatting") then
+		if client and client:supports_method("textDocument/formatting") then
 			local group = vim.api.nvim_create_augroup("LspFormat" .. bufnr, { clear = true })
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				group = group,

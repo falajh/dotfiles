@@ -57,16 +57,14 @@ return {
 				}
 			}
 			-- telescope
-			local builtin = require("telescope.builtin")
 			require("telescope").load_extension('project')
+			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>e", builtin.diagnostics, { desc = "Find diagnostics" })
 			vim.keymap.set("n", "<leader>i", builtin.lsp_references, { desc = "Find File" })
 			vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "Find File" })
 			vim.keymap.set("n", "<leader>F", builtin.live_grep, { desc = "Live Grep" })
-			vim.keymap.set("n", "<leader>l", builtin.lsp_document_symbols, { desc = "List Types" })
+			vim.keymap.set("n", "<leader>g", builtin.lsp_document_symbols, { desc = "List Types" })
 			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "List Buffers" })
-
-
 			vim.api.nvim_set_keymap('n', '<leader>p', ":Telescope project<CR>", { desc = "open project" })
 			-- Make <Space> work normally in insert mode
 			vim.keymap.set("i", "<Space>", "<Space>")

@@ -12,12 +12,17 @@ order += "cpu_usage"
 order += "disk /"
 order += "path_exists VPN"
 order += "wireless _first_"
+order += "volume speakers"
 
-
-
+volume speakers {
+	format = "s: %volume"
+	format_muted = "s: %volume muted"
+	device = "pipewire"
+	mixer = "Master"
+}
 
 disk "/" {
-    format = "󰋊 %free"
+	format = "󰋊 %free"
 }
 
 cpu_usage {
@@ -46,7 +51,7 @@ time {
 }
 
 path_exists VPN {
-	path = /sys/class/net/tun0
+	path = /sys/class/net/proton0
 	format = "󰦝"
 	format_down=""
 }

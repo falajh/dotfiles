@@ -13,6 +13,7 @@
 # }
 # zle -N zle-line-init
 
+
 sub-shell() {
 	CURSOR=0
 	if [[ $BUFFER != "" ]]; then
@@ -34,4 +35,12 @@ syncd() {
 		--include-from="$HOME/.config/sync.list.txt"\
 		--exclude="*"\
 		"$HOME"/ ~/code/dotfiles/
+}
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
 }
