@@ -31,7 +31,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym Shift+space floating toggle
 bindsym $mod+Shift+n exec $zscripts/notes.sh
-bindsym $mod+n exec alacritty -e $zscripts/nmtui.sh
+bindsym $mod+n exec alacritty --class float-term -e wifitui
 bindsym $mod+space exec  rofi -show drun
 bindsym $mod+g exec  rofi -show run
 bindsym $mod+a focus parent

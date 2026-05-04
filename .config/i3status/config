@@ -8,46 +8,45 @@ general {
 
 order += "time"
 order += "battery 0"
+order += "volume speakers"
 order += "cpu_usage"
 order += "disk /"
 order += "path_exists VPN"
 order += "wireless _first_"
-order += "volume speakers"
 
 volume speakers {
-	format = "s: %volume"
-	format_muted = "s: %volume muted"
+	format = "|󰕾 %volume|"
+	format_muted = "|󰖁 %volume|"
 	device = "pipewire"
 	mixer = "Master"
 }
 
 disk "/" {
-	format = "󰋊 %free"
+	format = "|󰋊 %free|"
 }
 
 cpu_usage {
-	format = " %usage"
+	format = "| %usage|"
 }
 
 battery 0 {
-	format = "%status%percentage"
+	format = "|%status%percentage|"
 	status_chr = 󰁹󱐋
 	status_bat = '󰁹 '
 	status_full = '󱟢 '
 	low_threshold = 10
 	threshold_type = percentage
-	format_down = "No battery"
-    last_full_capacity = true
+	format_down = "|No battery|"
+	last_full_capacity = true
 }
 
 wireless _first_ {
-    format_up = "%ip"
-    format_down = "NO CONNECTION"
+	format_up = "%ip"
+	format_down = "NO CONNECTION"
 }
 
-
 time {
-    format = "%I:%M:%S %p\t\t\t%m/%d %a\t\t\t"
+	format = "%I:%M:%S %p\t\t\t%m/%d %a\t\t"
 }
 
 path_exists VPN {

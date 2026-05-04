@@ -1,0 +1,37 @@
+# Dracula-inspired wifitui theme
+
+# Primary color (selection highlight - purple)
+Primary = ["#BD93F9", "#BD93F9"]
+
+# Subtle text (comment-like gray)
+Subtle = ["#6272A4", "#6272A4"]
+
+# Success (green)
+Success = ["#50FA7B", "#50FA7B"]
+
+# Error (red/pink)
+Error = ["#FF5555", "#FF5555"]
+
+# Normal text (foreground)
+Normal = ["#F8F8F2", "#F8F8F2"]
+
+# Disabled (faded purple/gray)
+Disabled = ["#44475A", "#44475A"]
+
+# Border (background contrast)
+Border = ["#44475A", "#44475A"]
+
+# Signal gradient (cyan → orange)
+SignalHigh = ["#8BE9FD", "#8BE9FD"]   # Cyan
+SignalLow  = ["#FFB86C", "#FFB86C"]   # Orange
+
+# Saved networks (pink accent)
+Saved = ["#FF79C6", "#FF79C6"]
+
+# Icons
+TitleIcon = "󰖩  "
+NetworkSecureIcon = " "
+NetworkOpenIcon = " "
+NetworkUnknownIcon = " "
+NetworkSavedIcon = " "
+AccessPointIcon = "󰀃 "

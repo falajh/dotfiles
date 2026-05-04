@@ -48,6 +48,8 @@
 .config/user-dirs.dirs
 .config/wezterm/
 .config/wezterm/***
+.config/wifitui/
+.config/wifitui/***
 .config/zsh/
 .config/zsh/***
 .config/zsh/.zshrc
