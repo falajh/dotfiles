@@ -8,8 +8,6 @@
 .config/alacritty/***
 .config/bash/
 .config/bash/***
-.config/dnf/
-.config/dnf/***
 .config/dunst/
 .config/dunst/***
 .config/flameshot/
@@ -32,8 +30,6 @@
 .config/nvim/***
 .config/picom/
 .config/picom/***
-.config/qutebrowser/
-.config/qutebrowser/***
 .config/rofi/
 .config/rofi/***
 .config/starship/
@@ -46,10 +42,12 @@
 .config/tmux-sessionizer/
 .config/tmux-sessionizer/***
 .config/user-dirs.dirs
-.config/wezterm/
-.config/wezterm/***
+.config/vim/
+.config/vim/***
 .config/wifitui/
 .config/wifitui/***
+.config/yazi/
+.config/yazi/***
 .config/zsh/
 .config/zsh/***
 .config/zsh/.zshrc

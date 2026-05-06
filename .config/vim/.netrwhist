@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/zaater/.config/yazi/flavors/dracula.yazi'
+let g:netrw_dirhist_5='/home/zaater/.config/yazi/flavors'
+let g:netrw_dirhist_4='/home/zaater/.config/yazi'
+let g:netrw_dirhist_3='/home/zaater/code'
+let g:netrw_dirhist_2='/home/zaater/.config/vim'
+let g:netrw_dirhist_1='/home/zaater/.config'
+let g:netrw_dirhist_0='/home/zaater/.config/gtk-4.0'
+let g:netrw_dirhist_9='/run/user/1000/gvfs/mtp:host=HONOR_CMA-LX2_AV8P9K2504606868/Internal storage'
+let g:netrw_dirhist_8='/home/zaater/media'
+let g:netrw_dirhist_7='/home/zaater/.config'

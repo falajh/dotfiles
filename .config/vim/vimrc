@@ -1,0 +1,35 @@
+inoremap jj <Esc>
+set number
+set relativenumber
+set mouse=
+set tabstop=4
+set shiftwidth=4
+set list
+set listchars=tab:│\ ,lead:·,trail:·,eol:󱞣
+set scrolloff=8
+set sidescroll=1
+set sidescrolloff=8
+set nohlsearch
+set incsearch
+if has('termguicolors')
+	set termguicolors
+endif
+
+nnoremap <M-v> <C-v>
+nnoremap <Space>q :bd<CR>
+nnoremap <M-o> :Explore<CR>
+
+set cursorline
+set confirm
+
+set signcolumn=no
+set foldcolumn=0
+set numberwidth=1
+silent !echo -ne "\e[2 q"
+let &t_SI = "\e[6 q" 
+let &t_EI = "\e[2 q"
+
+packadd! dracula
+syntax enable
+colorscheme dracula
+highlight Normal ctermbg=none guibg=NONE
