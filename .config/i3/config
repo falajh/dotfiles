@@ -1,4 +1,4 @@
-set $zscripts ~/app/scripts
+set $scripts ~/projects/repos/scripts
 include ~/.config/i3/keymaps
 include ~/.config/i3/workspaces
 
@@ -10,7 +10,7 @@ exec --no-startup-id fcitx5 -dr
 exec --no-startup-id exec picom -b 
 set $mod Mod4
 exec --no-startup-id feh --bg-fill ~/media/pictures/backgrounds/clown.jpeg
-exec --no-startup-id $zscripts/battery-warner.sh
+exec --no-startup-id $scripts/battery-warner.sh
 # exec --no-startup-id xset s 600 500
 exec --no-startup-id xss-lock -n /usr/share/doc/xss-lock/dim-screen.sh -- i3lock -n -i ~/media/pictures/backgrounds/And-the-world-moved-on.png
 exec --no-startup-id alacritty --class=scratchpad-term
