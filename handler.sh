@@ -8,7 +8,7 @@ case "$1" in
 		case "$2" in
 			PBTN|PWRF)
 				logger 'PowerButton pressed'
-				/home/zaater/app/scripts/power-menu.sh
+				/home/zaater/projects/repos/scripts/power-menu.sh
 				;;
 			*)
 				logger "ACPI action undefined: $2"
